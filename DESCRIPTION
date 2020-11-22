@@ -1,0 +1,17 @@
+Package: UnsupLP2
+Title: A sample package exposing some functions for Unspervised Learning
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Chris",
+           family = "Keefe",
+           role = c("aut", "cre"),
+           email = "chriskeefe@nau.edu",
+           comment = c(ORCID = "https://orcid.org/0000-0002-4289-0991"))
+Description: UnsupLP2 demonstrates that I can still build an R package.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    testthat
