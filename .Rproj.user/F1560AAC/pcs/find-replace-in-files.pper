@@ -1,0 +1,13 @@
+{
+    "dialog-state": {
+        "query": "UnsupLP1",
+        "path": "~/src/coursework20fall/UnsupLP2",
+        "regex": false,
+        "caseSensitive": false,
+        "filePatterns": [],
+        "excludeFilePatterns": [],
+        "resultsCount": 0,
+        "errorCount": 0,
+        "replaceErrors": ""
+    }
+}
