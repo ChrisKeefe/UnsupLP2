@@ -41,5 +41,7 @@ Here are some basic examples of how to use the functions in this package. For mo
 library(UnsupLP2)
 # Perform principle coordinates analysis on the iris data set
 iris.fit <- PCA(iris[1:4])
+
+# View the first few rows of the Principal Component vectors
 head(iris.fit$x)
 ```

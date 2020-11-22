@@ -38,6 +38,8 @@ documentation.
 library(UnsupLP2)
 # Perform principle coordinates analysis on the iris data set
 iris.fit <- PCA(iris[1:4])
+
+# View the first few rows of the Principal Component vectors
 head(iris.fit$x)
 #>         PC1        PC2         PC3          PC4
 #> 1 -2.684126 -0.3193972  0.02791483  0.002262437
