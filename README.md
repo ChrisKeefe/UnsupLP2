@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Travis build
-status](https://travis-ci.com/ChrisKeefe/UnsupLP2.svg?branch=master)](https://travis-ci.com/ChrisKeefe/UnsupLP2)
+status](https://travis-ci.com/ChrisKeefe/UnsupLP2.svg?branch=main)](https://travis-ci.com/ChrisKeefe/UnsupLP2)
 <!-- badges: end -->
 
 UnsupLP2 is a sample package written for CS599 - Unsupervised Learning,
