@@ -1,4 +1,4 @@
-test_that("output is well-formed", {
+test_that("PCA output is well-formed", {
   test.data <- iris[1:4]
   result <- PCA(test.data)
 
