@@ -22,9 +22,10 @@ Calculates reconstruction error (RE) of PCA for a feature matrix.
 \examples{
 # Prep data
 unlabeled.iris.data <- iris[1:4]
+num.vars <- ncol(unlabeled.iris.data)
 
 # Compute RE on the unlabeled iris data
-rec.err.df <- compute.rec.err(unlabeled.iris.data, ncol(unlabeled.iris.data))
+rec.err.df <- compute.rec.err(unlabeled.iris.data, num.vars)
 
 # Plot RE over model complexity
 plot(rec.err.df$n.principal.components, rec.err.df$rec.error,

@@ -7,9 +7,10 @@
 #' @param n.components An integer representing the number of principal
 #'   components to calculate and measure RE for. Must not exceed M.
 #'
-#' @return a two-column dataframe containing  `n.principal.components` and `rec.error` data
+#' @return a two-column dataframe containing rec.error data by number of PCs
 #' @export
 #'
+#' @examples
 #' # Prep data
 #' unlabeled.iris.data <- iris[1:4]
 #' num.vars <- ncol(unlabeled.iris.data)
@@ -20,24 +21,28 @@
 #' # Plot RE over model complexity
 #' plot(rec.err.df$n.principal.components, rec.err.df$rec.error,
 #'      xlab="# PCs", ylab="Reconstruction Err")
-compute.rec.err <- function(data, n.components){
-  data <- as.matrix(data)
-  subset.fit <- PCA(data)
-  data.mean <- matrix(colMeans(data), nrow=nrow(data),
-                      ncol=ncol(data), byrow=TRUE)
+compute.rec.err <- function(data.mat, n.components){
+  if (n.components > nrow(data.mat)){
+    stop("Invalid argument: n.components may not be greater than the number of variables in data.mat")
+  }
+
+  data.mat <- as.matrix(data.mat)
+  subset.fit <- PCA(data.mat)
+  data.mean <- matrix(colMeans(data.mat), nrow=nrow(data.mat),
+                      ncol=ncol(data.mat), byrow=TRUE)
   prev.fit <- data.mean
   fit.list <- list()
   rec.err.list <- list()
 
   for (n.pcs in 1:n.components){
-    rotation.mat <- matrix(subset.fit[["rotation"]][, n.pcs], nrow=nrow(data),
-                           ncol=ncol(data), byrow = TRUE)
+    rotation.mat <- matrix(subset.fit[["rotation"]][, n.pcs], nrow=nrow(data.mat),
+                           ncol=ncol(data.mat), byrow = TRUE)
     lambda.vec <- subset.fit[["x"]][, n.pcs]
 
     # Compute reconstruction error
     prev.fit <- prev.fit + rotation.mat * lambda.vec
     fit.list[[paste(n.pcs)]] <- prev.fit
-    rec.err.list[[paste(n.pcs)]] <- sum((data - prev.fit)^2)
+    rec.err.list[[paste(n.pcs)]] <- sum((data.mat - prev.fit)^2)
   }
 
   data.frame(n.principal.components=1:n.components,
