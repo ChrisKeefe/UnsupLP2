@@ -7,7 +7,7 @@
 #' @param n.components An integer representing the number of principal
 #'   components to calculate and measure RE for. Must not exceed M.
 #'
-#' @return a two-column dataframe of rec.error data by number of PCs
+#' @return a two-column dataframe of rec.error data by number of PCs.
 #' @export
 #'
 #' @examples
@@ -22,8 +22,8 @@
 #' plot(rec.err.df$n.principal.components, rec.err.df$rec.error,
 #'      xlab="# PCs", ylab="Reconstruction Err")
 compute.rec.err <- function(data.mat, n.components){
-  if (n.components > nrow(data.mat)){
-    stop("Invalid argument: n.components may not be greater than the number of variables in data.mat")
+  if (n.components > nrow(data.mat) | n.components < 1){
+    stop("Invalid argument: n.components must be between 1 and the number of variables in data.mat")
   }
 
   data.mat <- as.matrix(data.mat)
