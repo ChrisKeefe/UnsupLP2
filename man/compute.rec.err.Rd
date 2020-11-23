@@ -14,7 +14,7 @@ columns (data features)}
 components to calculate and measure RE for. Must not exceed M.}
 }
 \value{
-a two-column dataframe containing  \code{n.principal.components} and \code{rec.error} data
+a two-column dataframe of rec.error data by number of PCs
 }
 \description{
 Calculates reconstruction error (RE) of PCA for a feature matrix.

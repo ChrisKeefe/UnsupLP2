@@ -36,10 +36,9 @@ documentation.
 
 ``` r
 library(UnsupLP2)
-# Perform principle coordinates analysis on the iris data set
+# Perform principle coordinates analysis on the iris data set...
 iris.fit <- PCA(iris[1:4])
-
-# View the first few rows of the Principal Component vectors
+# ...and view the first few rows of the Principal Component vectors
 head(iris.fit$x)
 #>         PC1        PC2         PC3          PC4
 #> 1 -2.684126 -0.3193972  0.02791483  0.002262437
@@ -48,4 +47,18 @@ head(iris.fit$x)
 #> 4 -2.745343  0.3182990 -0.03155937 -0.075575817
 #> 5 -2.728717 -0.3267545 -0.09007924 -0.061258593
 #> 6 -2.280860 -0.7413304 -0.16867766 -0.024200858
+
+# Calculate and plot PCA reconstruction error over n.components for iris data
+# Wrangle data
+unlabeled.iris.data <- iris[1:4]
+num.vars <- ncol(unlabeled.iris.data)
+
+# Compute RE...
+rec.err.df <- compute.rec.err(unlabeled.iris.data, num.vars)
+
+# and plot over model complexity
+plot(rec.err.df$n.principal.components, rec.err.df$rec.error,
+     xlab="# PCs", ylab="Reconstruction Err")
 ```
+
+<img src="man/figures/README-example-1.png" width="100%" />

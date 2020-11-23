@@ -39,9 +39,20 @@ devtools::install_github("ChrisKeefe/UnsupLP2")
 Here are some basic examples of how to use the functions in this package. For more complete usage information, please see the function documentation.
 ```{r example}
 library(UnsupLP2)
-# Perform principle coordinates analysis on the iris data set
+# Perform principle coordinates analysis on the iris data set...
 iris.fit <- PCA(iris[1:4])
-
-# View the first few rows of the Principal Component vectors
+# ...and view the first few rows of the Principal Component vectors
 head(iris.fit$x)
+
+# Calculate and plot PCA reconstruction error over n.components for iris data
+# Wrangle data
+unlabeled.iris.data <- iris[1:4]
+num.vars <- ncol(unlabeled.iris.data)
+
+# Compute RE...
+rec.err.df <- compute.rec.err(unlabeled.iris.data, num.vars)
+
+# and plot over model complexity
+plot(rec.err.df$n.principal.components, rec.err.df$rec.error,
+     xlab="# PCs", ylab="Reconstruction Err")
 ```

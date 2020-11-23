@@ -7,7 +7,7 @@
 #' @param n.components An integer representing the number of principal
 #'   components to calculate and measure RE for. Must not exceed M.
 #'
-#' @return a two-column dataframe containing rec.error data by number of PCs
+#' @return a two-column dataframe of rec.error data by number of PCs
 #' @export
 #'
 #' @examples
