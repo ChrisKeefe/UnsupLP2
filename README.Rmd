@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 # UnsupLP2
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.com/ChrisKeefe/UnsupLP2.svg?branch=master)](https://travis-ci.com/ChrisKeefe/UnsupLP2)
+[![Travis build status](https://travis-ci.com/ChrisKeefe/UnsupLP2.svg?branch=main)](https://travis-ci.com/ChrisKeefe/UnsupLP2)
 <!-- badges: end -->
 
 UnsupLP2 is a sample package written for CS599 - Unsupervised Learning, which demonstrates my ability to:
